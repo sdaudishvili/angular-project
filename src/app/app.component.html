@@ -1,9 +1,9 @@
+<app-header (tabChanged)="onTabChange($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h3>app component</h3>
-      <hr />
-      <app-servers></app-servers>
+    <div class="col-md-12">
+      <app-recipes *ngIf="curTab === 'recipes'; else elseBlock"></app-recipes>
+      <ng-template #elseBlock><app-shopping-list></app-shopping-list></ng-template>
     </div>
   </div>
 </div>
